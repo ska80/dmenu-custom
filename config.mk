@@ -2,7 +2,7 @@
 VERSION = 4.9
 
 # paths
-PREFIX = /usr/local
+PREFIX = /home/kamil/.local
 MANPREFIX = $(PREFIX)/share/man
 
 X11INC = /usr/X11R6/include
@@ -14,9 +14,9 @@ XINERAMAFLAGS = -DXINERAMA
 
 # freetype
 FREETYPELIBS = -lfontconfig -lXft
-FREETYPEINC = /usr/include/freetype2
+#FREETYPEINC = /usr/include/freetype2
 # OpenBSD (uncomment)
-#FREETYPEINC = $(X11INC)/freetype2
+FREETYPEINC = $(X11INC)/freetype2
 
 # includes and libs
 INCS = -I$(X11INC) -I$(FREETYPEINC)
@@ -28,4 +28,4 @@ CFLAGS   = -std=c99 -pedantic -Wall -Os $(INCS) $(CPPFLAGS)
 LDFLAGS  = $(LIBS)
 
 # compiler and linker
-CC = cc
+CC = clang
